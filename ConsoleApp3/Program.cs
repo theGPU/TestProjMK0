@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
 namespace TestProjMK0
 {
@@ -10,6 +7,17 @@ namespace TestProjMK0
     {
         static void Main(string[] args)
         {
+            DriveInfo[] disks = DriveInfo.GetDrives();
+
+            foreach (DriveInfo disk in disks)
+            {
+                Console.Write("Name - "); Console.WriteLine(disk.Name);
+                Console.Write("File system - "); Console.WriteLine(disk.DriveFormat);
+                Console.Write("Drive Type - "); Console.WriteLine(disk.DriveType);
+                Console.Write("Total size - "); Console.WriteLine(disk.TotalSize);
+                Console.Write("Total free space - "); Console.WriteLine(disk.TotalFreeSpace);
+
+            }
         }
     }
 }
